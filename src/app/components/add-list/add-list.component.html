@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title>Nueva Lista</ion-title>
+    <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="dismis()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card class="ion-align-self-center" >
+    <ion-item>
+      <ion-textarea [(ngModel)]="tituloLista" placeholder="Titulo de la lista"></ion-textarea>
+   </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="newItemList" placeholder="Escriba un item"></ion-textarea>
+   </ion-item>
+   <ion-button class="ion-margin" expand="block" (click)="addiItemList()">Añadir item</ion-button>
+  </ion-card>
+
+
+  <ion-list>
+    <ion-item *ngFor="let entry of form">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  
+</ion-content>
+<ion-footer>
+  <ion-button color="primary" expand="full" (click)="add()">Agregar Lista</ion-button>
+</ion-footer>

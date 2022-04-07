@@ -1,0 +1,33 @@
+<app-header></app-header>
+<ion-content>
+  <div *ngIf="listas.length == 0" class="noTask">
+    <h2 class="noTaskTitle">No Hay Listas Aun, Agregue una</h2>
+</div>
+  <div *ngFor="let list of listas; let i = index">
+    <ion-card>
+      <ion-card-header>
+        <ion-item>
+          {{list.value.title}}
+          <ion-icon (click)="deleteList(list.key)" slot="end" name="close-outline"></ion-icon>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content >
+          <ion-item *ngFor="let l of list.value.lista; let i = index">
+            <ion-label>{{l.val}}</ion-label>
+            <ion-checkbox [disabled]="l.isChecked" slot="end" [(ngModel)]="l.isChecked" 
+            (ionChange)="validateChekedFalse(l.isChecked, list.key, i)"
+            >
+          </ion-checkbox>
+          </ion-item> 
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="addNewItem()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    
+</ion-content>

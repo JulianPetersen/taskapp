@@ -1,0 +1,46 @@
+
+  .contenedor{
+    --background: rgb(233, 233, 233);
+  }
+
+
+.icono{
+  font-size: 30px;
+}
+
+.cardHeader{
+  padding: 0;
+}
+
+.content{
+  display:flex;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.botones{
+  display: flex;
+  width: 50%;
+  margin:0;
+
+}
+
+.tachado {
+  text-decoration:line-through;
+}
+
+
+.noTask{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  align-items: center;
+}
+
+.noTaskTitle{
+
+  font-family: 'Poppins', sans-serif;
+  color: gray;
+  font-size: 20px;
+}

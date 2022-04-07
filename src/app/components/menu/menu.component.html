@@ -1,0 +1,22 @@
+<ion-menu side="start" menuId="first" contentId="principal">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-item  [routerLink]="['/home']">
+          <ion-icon name="reader-outline"></ion-icon>
+          <ion-label class="label">Tareas</ion-label> 
+        </ion-item>
+        <ion-item [routerLink]="['/listas']">
+          <ion-icon name="list-outline"></ion-icon>
+          <ion-label class="label">Listas</ion-label> 
+        </ion-item>
+      </ion-menu-toggle>
+      
+    </ion-list>
+  </ion-content>
+</ion-menu>
